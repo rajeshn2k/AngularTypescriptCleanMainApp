@@ -1,0 +1,12 @@
+<form class="searchForm">
+  <table style="width: 100%">
+    <tr>
+      <td style="width: 75%">
+        <input type="text" placeholder="Search by Category" #searchInput />
+      </td>
+      <td style="width: 20%">
+        <button type="button" (click)="searchClick(searchInput.value)">Search</button>
+      </td>
+    </tr>
+  </table>
+</form>

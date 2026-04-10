@@ -1,0 +1,47 @@
+<div *ngIf="books">
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">
+            <a style="color: green" [routerLink]="['/book/edit/']">Add Book</a>
+          </th>
+          <th style="text-align: left" colspan="6">
+            <app-search (searchRequest)="searchRequestHandle($event)"></app-search>
+          </th>
+        </tr>
+        <tr>
+          <th>Book Name</th>
+          <th>Book Category</th>
+          <th>Edition</th>
+          <th>Image</th>
+          <th colspan="2">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>
+            <span>{{ book.bookName }}</span>
+          </td>
+          <td>
+            <span>{{ book.bookCategory }}</span>
+          </td>
+          <td>
+            <span>{{ book.edition }}</span>
+          </td>
+          <td>
+            <span>{{ book.image }}</span>
+          </td>
+          <td>
+            <span>{{ book.price }}</span>
+          </td>
+          <td>
+            <a [routerLink]="['/book/edit/', book.id]">
+              <span></span>Details</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+1. Create Application
+
+ng new GitHubAngularTypescriptMainApp --no-standalone --routing --ssr=false --style=scss
+
+
+2. Add Angular Material to Application
+
+ng add @angular/material
+
+Choose a prebuilt theme name, or "custom" for a custom theme: Pink/Blue Grey     
+[ Preview: https://material.angular.io?theme=pink-bluegrey ]
+? Set up global Angular Material typography styles? yes
+? Include the Angular animations module? Include, but disable animations
+
+3. Create App components and Modules
+
+ng generate module Book --routing
+ng generate component book/list/BookList --flat
+ng generate component book/edit/BookEdit --flat
+ng generate service book/service/BookService
+
+ng generate module Person --routing
+ng generate component person/list/PersonList --flat
+ng generate component person/edit/PersonEdit --flat
+ng generate service person/service/PersonService
+
+ng generate module Home --routing
+ng generate component home/Home --flat
+
+ng generate module shared/components/Footer
+ng generate component shared/components/Footer/Footer --flat
+
+ng generate module shared/components/Navigation
+ng generate component shared/components/Navigation/Navigation --flat
+
+ng generate module shared/components/Search
+ng generate component shared/components/Search/Search --flat
+
+
+
+4. Install and Import Node Model library for Book and Person model and Test Data
+
+npm i githubnodejstypescriptprinciplelibrary --save
+
+
+5 environment
+
+step 1 - Create Environment File
+
+ng generate environments
+
+
+6.
+npm i date-fns
+
+
+
+==========================
+
+
+shared module
+-----------------
+=>shared modules are only there import and export[expose] common modules to APPLICATION modules.
+=>No routing involed for this.
+
+
+APPLICATION modules [book module]
+-----------------
+=>Group related components as a single module and PROVIDE all necessary modules to the specific components
+=>APPLICATION modules [book module] will work as independent no need to refer it anyware in project,
+ if your having routing module to it
+=>APPLICATION modules [book module] will work as independent, need to refer it in app module,
+ if your are NOT using routing module to it
+
+
+Routing Module
+-----------------
+=> Routing Module will not carry any reference to APPLICATION modules
+=> Routing module is only to configure routing for a group of components, appliaction can use it by routers
+=> ON ROUTER REQUEST corresponding modules downloads [componenet request == mdoule requets]

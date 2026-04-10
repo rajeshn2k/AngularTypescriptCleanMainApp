@@ -1,0 +1,21 @@
+git clone https://github.com/RajeshNandhan/AngularTypescriptCleanMainApp.git
+
+git status
+
+git add .
+
+git status
+
+git commit -m "first commit"
+
+git status
+
+git push origin main
+
+git add .
+
+git pull origin main
+
+git remote -v
+
+git config --list
