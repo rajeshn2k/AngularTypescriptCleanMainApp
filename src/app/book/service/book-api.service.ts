@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Book } from 'githubnodejstypescriptprinciplelibrary/lib/model/book';
+import { Book } from '../../common/model/book';
 import { EnvironmentService } from '../../../environments/environment-service';
 
 @Injectable({

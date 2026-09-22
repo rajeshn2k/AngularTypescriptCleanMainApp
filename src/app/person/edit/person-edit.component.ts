@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Person } from 'githubnodejstypescriptprinciplelibrary/lib/model/person';
+import { Person } from '../../common/model/person';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageAction } from '../../common/constant/page-action';
@@ -35,13 +35,14 @@ export class PersonEditComponent
   ) {}
 
   initiateEditPersonForm(person: Person) {
-    let formattedDate = format(person.dateOfBirth, 'yyyy-MM-dd');
+    debugger
+    //let formattedDate = format(person.dateOfBirth, 'yyyy-MM-dd');
 
     this.personEditForm = this.editPersonFormBuilder.group({
       categoryField: [person.category, Validators.required],
-      dateOfBirthField: [formattedDate, Validators.required],
+      dateOfBirthField: [person.dateOfBirth, Validators.required],
       firstNameField: [person.firstName, Validators.required],
-      isPlayCricketField: [person.isPlayCricket, Validators.required],
+      isPlaySportsField: [person.isPlaySports, Validators.required],
       lastNameField: [person.lastName, Validators.required],
       rankField: [person.rank, Validators.required],
     });
@@ -91,8 +92,8 @@ export class PersonEditComponent
       this.selectedPerson.firstName =
         this.personEditForm.get('firstNameField')?.value;
 
-      this.selectedPerson.isPlayCricket =
-        this.personEditForm.get('isPlayCricketField')?.value;
+      this.selectedPerson.isPlaySports =
+        this.personEditForm.get('isPlaySportsField')?.value;
 
       this.selectedPerson.lastName =
         this.personEditForm.get('lastNameField')?.value;
@@ -187,7 +188,7 @@ export class PersonEditComponent
         rank: 0,
         category: '',
         dateOfBirth: new Date(1981, 3, 11),
-        isPlayCricket: false,
+        isPlaySports: false,
         dateCreated: new Date(2024, 11, 11),
       };
 

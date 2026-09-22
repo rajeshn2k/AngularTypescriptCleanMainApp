@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Person } from 'githubnodejstypescriptprinciplelibrary/lib/model/person';
-import { Logger } from 'githubnodejstypescriptprinciplelibrary/lib/log/logger';
+import { Person } from  '../../common/model/person';
 import { EnvironmentService } from '../../../environments/environment-service';
 
 @Injectable({

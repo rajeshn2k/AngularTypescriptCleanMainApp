@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Book } from 'githubnodejstypescriptprinciplelibrary/lib/model/book';
+import { Book } from '../../common/model/book';
 import { Subscription } from 'rxjs';
 import { BookApiService } from '../service/book-api.service';
 

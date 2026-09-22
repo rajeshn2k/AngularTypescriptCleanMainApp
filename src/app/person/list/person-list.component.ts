@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Person } from 'githubnodejstypescriptprinciplelibrary/lib/model/person';
+import { Person } from '../../common/model/person';
 import { Subscription } from 'rxjs';
 import { PersonApiService } from '../service/person-api.service';
 //import { SearchComponent } from 'githubangulartypescriptlibrary'

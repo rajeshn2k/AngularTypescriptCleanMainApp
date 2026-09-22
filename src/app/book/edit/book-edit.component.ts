@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Book } from 'githubnodejstypescriptprinciplelibrary/lib/model/book';
+import { Book } from '../../common/model/book';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageAction } from '../../common/constant/page-action';
@@ -178,7 +178,7 @@ export class BookEditComponent
         image: '',
         price: 0,
         personId: '0',
-        personName: '',
+        auhorName: '',
         dateCreated: new Date(2024, 11, 11),
       };
 

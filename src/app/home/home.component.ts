@@ -9,9 +9,11 @@ import { EnvironmentService } from '../../environments/environment-service';
 export class HomeComponent implements OnInit {
   appEnvironmentName = '';
   bookApiBaseUrl = '';
-  constructor(private environmentService: EnvironmentService) {}
+  personApiBaseUrl = '';
+  constructor(private environmentService: EnvironmentService) { }
   ngOnInit() {
     this.appEnvironmentName = this.environmentService.AppEnvironmentName;
     this.bookApiBaseUrl = this.environmentService.BookApiBaseUrl;
+    this.personApiBaseUrl = this.environmentService.PersonApiBaseUrl;
   }
 }
