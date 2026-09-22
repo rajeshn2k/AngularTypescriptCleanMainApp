@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 22px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: antiquewhite;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100vh;
+  width: 100%;
+  border: 1px solid mediumblue;
+  margin: auto;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.bookEditForm,
+.personEditForm {
+  width: 80%;
+}
+
+.bookEditForm input[type="text"],
+.bookEditForm button,
+.bookEditForm label,
+.personEditForm input[type="text"],
+.personEditForm button,
+.personEditForm label {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+/*button styel for FaTrashAlt, FaEdit, FaSave*/
+.item svg {
+  width: 48px;
+  min-width: 48px;
+  height: 36px;
+  font-size: 1rem;
+  color: steelblue;
+  cursor: pointer;
+}
+
+.item svg:focus,
+.item svg:hover {
+  color: red;
+  outline: none;
+}

@@ -1,0 +1,90 @@
+<div class="bookEditForm" *ngIf="selectedBook">
+  <!-- (ngSubmit)="onSubmit()" -->
+  <form [formGroup]="editBookForm">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <span>Book Id</span>
+          </td>
+          <td>
+            <span>{{ selectedBook.id }}</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span>Book Category</span>
+          </td>
+          <td>
+            <!-- <input type="text" [(ngModel)]="selectedBook.bookCategory" /> -->
+            <input type="text" formControlName="bookCategoryField"/>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span>Book Name</span>
+          </td>
+          <td>
+            <!-- <input type="text" [(ngModel)]="selectedBook.bookName" /> -->
+            <input type="text" formControlName="bookNameField"/>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span>Edition</span>
+          </td>
+          <td>
+            <!-- <input type="text" [(ngModel)]="selectedBook.edition" /> -->
+            <input type="text" formControlName="editionField" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span>Image</span>
+          </td>
+          <td>
+            <!-- <input type="text" [(ngModel)]="selectedBook.image" /> -->
+            <input type="text" formControlName="imageField" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span>Price</span>
+          </td>
+          <td>
+            <!-- <input type="text" [(ngModel)]="selectedBook.price" /> -->
+            <input type="text" formControlName="priceField"/>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <button title="Save" (click)="saveBook()">Save</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <button title="Save" (click)="deleteBook()">Delete</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <button title="Save" (click)="cancel()">Cancel</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <span style="color: red">{{ pageError }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

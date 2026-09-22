@@ -1,0 +1,51 @@
+<div *ngIf="persons">
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">
+            <a style="color: green" [routerLink]="['/person/edit/']"
+              >Add Person</a
+            >
+          </th>
+          <th style="text-align: left" colspan="5">
+            <app-search (searchRequest)="searchRequestHandle($event)"></app-search>
+          </th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Rank</th>
+          <th>Category</th>
+          <th>Date Of Birth</th>
+          <th>Play Cricket?</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of persons">
+          <td>
+            <span>{{ person.firstName }}</span> ,
+            <span>{{ person.lastName }}</span>
+          </td>
+          <td>
+            <span>{{ person.rank }}</span>
+          </td>
+          <td>
+            <span>{{ person.category }}</span>
+          </td>
+          <td>
+            <span>{{ person.dateOfBirth | date: 'yyyy-MM-dd' }}</span>
+          </td>
+          <td>
+            <span>{{ person.isPlaySports }}</span>
+          </td>
+          <td>
+            <a [routerLink]="['/person/edit/', person.id]">
+              <span class="glyphicon glyphicon-cog"></span>Details</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.searchForm {
+  width: 80%;
+}
+
+.searchForm input[type="text"],
+.searchForm button {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}

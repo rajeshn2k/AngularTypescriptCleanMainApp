@@ -1,0 +1,101 @@
+<div class="personEditForm" *ngIf="selectedPerson">
+  <form [formGroup]="personEditForm">
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <span>Person Id</span>
+            </td>
+            <td>
+              <span>{{ selectedPerson.id }}</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span>First Name</span>
+            </td>
+            <td>
+              <!-- <input type="text" [(ngModel)]="selectedPerson.firstName" /> -->
+              <input type="text" formControlName="firstNameField" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span>Last Name</span>
+            </td>
+            <td>
+              <!-- <input type="text" [(ngModel)]="selectedPerson.lastName" /> -->
+              <input type="text" formControlName="lastNameField" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span>Rating</span>
+            </td>
+            <td>
+              <!-- <input type="text" [(ngModel)]="selectedPerson.rank" /> -->
+              <input type="text" formControlName="rankField" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span>Category</span>
+            </td>
+            <td>
+              <!-- <input type="text" [(ngModel)]="selectedPerson.category" /> -->
+              <input type="text" formControlName="categoryField" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span>Date Of Birth</span>
+            </td>
+            <td>
+              <!-- <span>{{ selectedPerson.dateOfBirth }}</span> -->
+              <input type="date" formControlName="dateOfBirthField"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span>Play Cricketer?</span>
+            </td>
+            <td>
+              <!-- <input type="text" [(ngModel)]="selectedPerson.isPlaySports" /> -->
+              <input type="checkbox" formControlName="isPlaySportsField" />
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <button title="Save" (click)="savePerson()">Save</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <button title="Save" (click)="deletePerson()">Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <button title="Save" (click)="cancel()">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span style="color: red">{{ pageError }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </form>
+</div>
