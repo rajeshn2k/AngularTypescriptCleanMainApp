@@ -1,3 +1,13 @@
 <div class="header">
   <h1>{{appHeaderText}}</h1>
+  <div class="auth-buttons">
+    <ng-container *ngIf="!isAuthenticated">
+      <button (click)="login()" class="auth-button login-btn">Login</button>
+    </ng-container>
+    <ng-container *ngIf="isAuthenticated">
+      <span class="user-info">Welcome, {{userName}}</span>
+      <button (click)="goToProfile()" class="auth-button profile-btn">Profile</button>
+      <button (click)="logout()" class="auth-button logout-btn">Logout</button>
+    </ng-container>
+  </div>
 </div>

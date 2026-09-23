@@ -1,8 +1,8 @@
 export const environment = {
-  production: false,
-  bookApiBaseUrl: '',
-  personApiBaseUrl: '',
-  appEnvironmentName: 'development',
+  production: true,
+  appEnvironmentName: 'PRODUCTION',
+  bookApiBaseUrl: 'https://api.example.com/api/book',
+  personApiBaseUrl: 'https://api.example.com/api/person',
   auth0: {
     domain: 'YOUR_AUTH0_DOMAIN',
     clientId: 'YOUR_AUTH0_CLIENT_ID',

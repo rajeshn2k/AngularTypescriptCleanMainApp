@@ -7,5 +7,5 @@ export interface Book {
     price: number;
     image: string;
     dateCreated: Date;
-    auhorName: string;
+    authorName: string;
 }

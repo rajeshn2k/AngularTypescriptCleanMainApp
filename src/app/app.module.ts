@@ -11,6 +11,11 @@ import { HeaderModule } from './common/header/header.module';
 import { FooterModule } from './common/footer/footer.module';
 import { NavigationModule } from './common/navigation/navigation.module';
 import { CircuitBreakerInterceptor } from './common/interceptor/circuit-breaker.interceptor';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { LoginComponent } from './auth/login.component';
+import { CallbackComponent } from './auth/callback.component';
+import { ProfileComponent } from './auth/profile.component';
+import { AuthService } from './auth/auth.service';
 
 /*
 1. provideHttpClient is for HttpClientModule
@@ -19,7 +24,12 @@ import { CircuitBreakerInterceptor } from './common/interceptor/circuit-breaker.
 */
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    CallbackComponent,
+    ProfileComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,10 +41,17 @@ import { CircuitBreakerInterceptor } from './common/interceptor/circuit-breaker.
     //SearchModule, - This goes into inside component module implemenation level
   ],
   providers: [
+    AuthService,
     /*  Order of Interceptor matters
         multi: true means, there can be more than on HTTP_INTERCEPTORS otherwise last will only be called
+        AuthInterceptor should run first to add tokens, then CircuitBreakerInterceptor
     */
     provideHttpClient(withInterceptorsFromDi()),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CircuitBreakerInterceptor,

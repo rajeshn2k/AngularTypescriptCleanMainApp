@@ -178,7 +178,7 @@ export class BookEditComponent
         image: '',
         price: 0,
         personId: '0',
-        auhorName: '',
+        authorName: '',
         dateCreated: new Date(2024, 11, 11),
       };
 
