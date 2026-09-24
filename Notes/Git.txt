@@ -1,4 +1,4 @@
-git clone https://github.com/RajeshNandhan/AngularTypescriptCleanMainApp.git
+git clone https://github.com/rajeshn2k/AngularTypescriptCleanMainApp.git
 
 git status
 
